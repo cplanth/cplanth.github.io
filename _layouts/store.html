@@ -1,0 +1,35 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+---
+
+
+<br> Here's my store : prices are in USD and include shipping. More pottery photos are posted on my instagram account @czpceramics. I welcome comissions, and especially love making specific planters for specific plants. Please <a href="mailto:cadencecadence@gmail.com">contact me</a> to discuss.
+
+<br>
+<br>
+<br>
+<p><u><b>QUESTIONS</b></u>
+<br>In larger windows, I'd like to keep the text inside a narrower box, no border, justified to the left: how? 
+<br>with CSS viewport? 
+<br>
+<br><i>I guess it's time to figure out what Sass is..</i>
+<br>
+<br>ok haha it looks like I totally got rid of(?) or never installed(?) a premade Jekyll theme, and have been fumbling through inventing my own. 
+<br>Would it be best to <a href="https://jekyllrb.com/docs/themes/#overriding-theme-defaults">follow the documentation's instructions for creating my own Gem-based theme?</a> or is this scrappy style equally ok?
+
+<!-- this goes away for now <ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> -->
+
+  {% for post in site.store %}
+<br> <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}} 
+{% endfor %}
+
+{% include footer.ext %}

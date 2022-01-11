@@ -1,0 +1,35 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+---
+
+
+ongoing phone photos, last updated 08/08/2020
+<br>(see also: @cplanth) 
+<br>
+
+<!-- this goes away for now <ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul> -->
+
+  {% for post in site.misc_img %}
+<br> <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}} 
+{% endfor %}
+
+<br>
+<br>
+<br>
+<p><u><b>QUESTIONS</b></u>
+<br>why don't the above links work?
+<br>although.. the way I envision this page, I don't really care if the links work. 
+<br>I just want to post photos and have them show up chronologically, starting with the most recent, maybe published with a date, but actually probably no text. Just images. 
+<br>would be cool if the last updated thing at the top was automated
+
+
+{% include footer.ext %}

@@ -3,32 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <style>
-      body {
-          font-size: 80%;
-          font-family: Arial, Helvetica, sans-serif;
-      }
-
-      a {
-          color: black;
-          text-decoration: none;
-      }
-      
-      ul {
-          margin:10px;  
-          padding:15px;  
-      }
-      
-      .main{max-width:400px}
-
-      </style>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/styles.css">
   </head>
   <body onload="return ran_col()">
     <script type="text/javascript">
         function ran_col() {
             var color = '#';
-            var letters = ['a97a45','d2b79f','906444','c0885c','a9744a','a3693b','89563e', 'e9caa8'];
+            var letters = ['e3cdb1','d2b79f','cba47c','c0885c','a9744a','a3693b','b37e64', 'e9caa8'];
             color += letters[Math.floor(Math.random() * letters.length)];
             document.body.style.backgroundColor = color;
           }

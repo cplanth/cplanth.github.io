@@ -10,20 +10,66 @@ contact: cadencecadence@gmail.com
 <br><i>Welcome.</i>
 <br> 
 <br>◠ 
-<br>The moon is waning.
+<br>The moon is currently <span id="moon">..</span>.
 <br>
-<br>It may be Sunday or Monday at the moment,
+<br>It may be Saturday or Sunday at the moment,
 <br>depending on your location.
+
+
 <br>
-<br>⁍  ・ ✳︎ 
-<br>▸
-<div style="position: absolute; left: 50%;">
-    ◎・ *  ✣ ・<div style="position: relative; left: -50%; border: dotted black 1px; padding: 2px"> ・ . ✽ 
+<br>⁍  &nbsp; &nbsp; &nbsp;・ &nbsp; ✳︎ 
+<br>✣
+<div id="indexalign">
+    ◎・ &nbsp; *  &nbsp; &nbsp; &nbsp; &nbsp; ✣ &nbsp; &nbsp;・
+    <div id="indexbox"> ・&nbsp; &nbsp; &nbsp; &nbsp; . &nbsp; ✽ 
 <ul>
     <li><a href="http://localhost:4000/store/">Cadence's Store</a></li>
     <li><a href="http://localhost:4000/misc_img/">misc_img</a>   ・</li> 
     <li><a href="http://localhost:4000/news/">News</a></li>
     <li> About</li>
-</ul>  ✤   , * • ✳︎ ##
-</div> ✳︎ ・✳︎✽
+</ul>  ✤ &nbsp; &nbsp; * • ✳︎ &nbsp; ## &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ◠ &nbsp; &nbsp;
+</div>  ・&nbsp; &nbsp; ✽
+<br> ✳︎
  </div>
+
+
+
+
+ <script>
+    function load_moon_phases(obj,callback){
+        const gets=[]
+        for (const i in obj){
+            gets.push(i + "=" +encodeURIComponent(obj[i]))
+        }
+        gets.push("LDZ=" + new Date(obj.year,obj.month-1,1) / 1000)
+        const xmlhttp = new XMLHttpRequest()
+        const url = "https://www.icalendar37.net/lunar/api/?" + gets.join("&")
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                callback(JSON.parse(xmlhttp.responseText))
+            }
+        }
+        xmlhttp.open("GET", url, true)
+        xmlhttp.send()
+    } 
+    
+    const configMoon = {
+        lang  		: 'en', // (*) 
+        month 		: new Date().getMonth() + 1, // 1  - 12
+        year  		: new Date().getFullYear(), // year
+    }
+    
+    function example_1(moon){    
+        const day = new Date().getDate();
+        let html = moon.phase[day].phaseName.toLowerCase()
+        if (html=="new moon"){html="new"}
+        if (html=="first quarter"){html="half full"}
+        if (html=="full moon"){html="full"}
+        if (html=="last quarter"){html="half empty"}
+        document.getElementById("moon").innerHTML = html
+        console.log(moon.phase)
+    }   
+    load_moon_phases(configMoon, example_1)
+
+
+    </script>   

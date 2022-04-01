@@ -1,7 +1,4 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: default
 ---
 
@@ -20,7 +17,7 @@ layout: default
   </ul> -->
 
   {% for post in site.store %}
-<br> <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}} 
+<br> <a href="{{post.url}}"><u>{{ post.title }}</u></a>, {{post.location}} class="store">
 {% endfor %}
 
 {% include footer.ext %}

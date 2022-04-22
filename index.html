@@ -9,27 +9,32 @@ contact: cadencecadence@gmail.com
 
 <br><i>Welcome.</i>
 <br> 
-<br>◠ 
+<br>
 <br>The moon is currently <span id="moon">..</span>.
 <br>
-<br>It may be Saturday or Sunday at the moment,
+<br>It may be <span id="day">...</span> at the moment,
 <br>depending on your location.
-
-
 <br>
 <br>⁍  &nbsp; &nbsp; &nbsp;・ &nbsp; ✳︎ 
-<br>✣
+<br>
+<br>✣ 
 <div id="indexalign">
-    ◎・ &nbsp; *  &nbsp; &nbsp; &nbsp; &nbsp; ✣ &nbsp; &nbsp;・
-    <div id="indexbox"> ・&nbsp; &nbsp; &nbsp; &nbsp; . &nbsp; ✽ 
+    ◎・ &nbsp; *  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;・&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <div id="indexbox"> ・&nbsp; &nbsp; &nbsp; &nbsp; . &nbsp; 
 <ul>
     <li><a href="http://localhost:4000/store/">Cadence's Store</a></li>
     <li><a href="http://localhost:4000/misc_img/">misc_img</a>   ・</li> 
     <li><a href="http://localhost:4000/news/">News</a></li>
-    <li> About</li>
-</ul>  ✤ &nbsp; &nbsp; * • ✳︎ &nbsp; ## &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ◠ &nbsp; &nbsp;
-</div>  ・&nbsp; &nbsp; ✽
-<br> ✳︎
+    <li><a href="http://localhost:4000/about/">About</a></li>
+</ul>
+</div>  ・&nbsp; &nbsp; &nbsp; &nbsp; ✽
+<br>
+<br> &nbsp; &nbsp; ✳︎
+<br>
+<br>
+<br>
+<br>
+<br>◠ 
  </div>
 
 
@@ -71,5 +76,13 @@ contact: cadencecadence@gmail.com
     }   
     load_moon_phases(configMoon, example_1)
 
+    function setDay(){ 
+        const today = new Date();
+        const day1 = today.getDay();
+        // Sunday - Saturday : 0 - 6
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        document.getElementById("day").innerHTML = days[day1]
+    }
+setDay()
 
     </script>   

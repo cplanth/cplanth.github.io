@@ -9,11 +9,9 @@ contact: cadencecadence@gmail.com
 
 <br><i>Welcome.</i>
 <br> 
-<br>
 <br>The moon is currently <span id="moon">..</span>.
 <br>
-<br>It may be <span id="day">...</span> at the moment,
-<br>depending on your location.
+<br>It may be <span id="day">...</span> at the moment.
 <br>
 <br>⁍  &nbsp; &nbsp; &nbsp;・ &nbsp; ✳︎ 
 <br>
@@ -68,9 +66,9 @@ contact: cadencecadence@gmail.com
         const day = new Date().getDate();
         let html = moon.phase[day].phaseName.toLowerCase()
         if (html=="new moon"){html="new"}
-        if (html=="first quarter"){html="half full"}
+        if (html=="first quarter"){html="half full (waxing, first quarter phase)"}
         if (html=="full moon"){html="full"}
-        if (html=="last quarter"){html="half empty"}
+        if (html=="last quarter"){html="half empty (waning, third quarter phase)"}
         document.getElementById("moon").innerHTML = html
         console.log(moon.phase)
     }   
@@ -80,9 +78,28 @@ contact: cadencecadence@gmail.com
         const today = new Date();
         const day1 = today.getDay();
         // Sunday - Saturday : 0 - 6
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-        document.getElementById("day").innerHTML = days[day1]
+        const days = [
+            {name:"Sunday"},
+            {name:"Monday"}, 
+            {name:"Tuesday"}, 
+            {name:"Wednesday"}, 
+            {name:"Thursday"}, 
+            {name:"Friday",
+            link:"https://en.wikipedia.org/wiki/Venus_(mythology)"}, 
+            {name:"Saturday"}
+        ];
+        const dayObject = days[day1]
+        if (dayObject.name =="Saturday"){dayObject="h"}
+        document.getElementById("day").innerHTML = makePlanetLink(dayObject)
+        
     }
-setDay()
+    setDay()
+
+    function makePlanetLink(dayObject){
+        return `<a href="${dayObject.link}">${dayObject.name}</a>` 
+        //this is a template string! it uses! backticks ``
+        //to access javascript inside of a template string ${JAVASCRIPT}
+        //yahoo!
+    }
 
     </script>   

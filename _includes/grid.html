@@ -1,6 +1,15 @@
-<div>
+<div class="flex-grid">
   {% for post in include.data %}
-<br> {{post.title}} : <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}}
-<br> <img src="{{post.image}}" class="misc_img">
+<div class="flex-grid-item">
+  <br>
+  {{post.title}} :
+  <a href="{{ post.url }}">
+    <u>
+      {{ post.title }}
+    </u>
+  </a>, {{post.location}}
+
+  <br> <img src="{{post.image}}" class="misc_img">
+</div>
 {% endfor %}
 </div>

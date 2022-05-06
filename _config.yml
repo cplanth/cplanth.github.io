@@ -44,6 +44,8 @@ collections:
     output: true
   news:
     output: true
+  store:
+    output: true
 
 
 # Exclude from processing.

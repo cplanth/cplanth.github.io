@@ -5,6 +5,7 @@
 layout: default
 ---
 
+<div class="main">
 
 <b>{{ page.title }}</b>
 <br>
@@ -18,9 +19,10 @@ layout: default
   </ul> -->
 
   {% for post in site.posts %}
-<br> {{post.timeframe}} : <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}} 
+<br> {{post.timeframe}} : <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}}
 {% endfor %}
 <br>November 23 - December 28, 2019 : <a href="http://hearthgarage.com/pages/NEWSTRATA.html"><u>New Strata</u></a>, Toronto, ON
 
-
 {% include footer.ext %}
+</div>
+

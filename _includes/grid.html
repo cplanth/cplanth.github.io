@@ -1,0 +1,6 @@
+<div>
+  {% for post in include.data %}
+<br> {{post.title}} : <a href="{{ post.url }}"><u>{{ post.title }}</u></a>, {{post.location}}
+<br> <img src="{{post.image}}" class="misc_img">
+{% endfor %}
+</div>

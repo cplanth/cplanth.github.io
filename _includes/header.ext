@@ -1,7 +1,0 @@
-<b><a href="/">Cadence Planthara</a></b>
-{%if page.contact%}
-<br><a href="mailto:cadencecadence@gmail.com">cadencecadence@gmail.com</a> 
-{%else%}
-<br>{{ page.title }}
-{%endif%}
-<hr color="#000000" size="1" width="100%"> 

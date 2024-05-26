@@ -1,31 +1,72 @@
----
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>C Z P</title>
 
-layout: default
-title: C Z P hehehehehe
-contact: cadencecadence@gmail.com
----
+    <style>
+    @charset "UTF-8";
+body {
+  font: 90% Arial, Helvetica, sans-serif;
+  color: black; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+ul {
+  margin: 10px;
+  padding: 10px;
+  list-style-type: ' ▸  '; }
+
+.main {
+  max-width: 420px; }
+
+  #indexalign {
+  position: absolute;
+  left: 50%; }
+
+#indexbox {
+  position: relative;
+  left: -50%;
+  border: solid black 1px;
+  padding: 6px;
+  box-shadow: 2px 2px 6px #a3693b; }
+
+</style>
+  </head>
+  <body onload="return ran_col()">
+    <script type="text/javascript">
+        function ran_col() {
+            var color = '#';
+            var letters = ['e3cdb1','d2b79f','cba47c','D3B2A0','E3BE7D','d6aa87','D2A773','d9b791','E2A669','bdad8c','CAA46C','c88f49'];
+            color += letters[Math.floor(Math.random() * letters.length)];
+            document.body.style.backgroundColor = color;
+          }
+    </script>
+<b><a href="/">Cadence Planthara</a></b>
+<br><a href="mailto:cadencecadence@gmail.com">cadencecadence@gmail.com</a> 
+<br>
+<hr color="#000000" size="1" width="100%"> 
+
 
 <br><i>Welcome.</i>
 <br> 
 <br>The moon is currently <span id="moon">..</span>.
-<br>
 <br>It may be <span id="day">...</span> at the moment.
 <br>
-<br>⁍  &nbsp; &nbsp; &nbsp;・ &nbsp; ✳︎ 
 <br>
-<br>✣ 
+<br>
 <div id="indexalign">
-    ◎・ &nbsp; *  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;・&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-    <div id="indexbox"> ・&nbsp; &nbsp; &nbsp; &nbsp; . &nbsp; 
-<ul>
-    <li><a href="http://localhost:4000/store/">Cadence's Store</a></li>
-    <li><a href="http://localhost:4000/misc_img/">misc_img</a>   ・</li> 
-    <li><a href="http://localhost:4000/news/">News</a></li>
-    <li><a href="http://localhost:4000/about/">About</a></li>
-</ul>
-</div>  ・&nbsp; &nbsp; &nbsp; &nbsp; ✽
+   
+    <div id="indexbox"> ・&nbsp; &nbsp; &nbsp; &nbsp; . &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <br><b>&nbsp; w e b s i t e
+    <br>&nbsp; &nbsp; c o m i n g  
+    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s o o n
+    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</b>
+    <br>・
+
+</div>  &nbsp; &nbsp; &nbsp; &nbsp; 
 <br>
 <br> &nbsp; &nbsp; ✳︎
 <br>
@@ -79,17 +120,22 @@ contact: cadencecadence@gmail.com
         const day1 = today.getDay();
         // Sunday - Saturday : 0 - 6
         const days = [
-            {name:"Sunday"},
-            {name:"Monday"}, 
-            {name:"Tuesday"}, 
-            {name:"Wednesday"}, 
-            {name:"Thursday"}, 
+            {name:"Sunday",
+            link:"https://en.wikipedia.org/wiki/Sol_(Roman_mythology)"},
+            {name:"Monday",
+            link:"https://en.wikipedia.org/wiki/List_of_lunar_deities"}, 
+            {name:"Tuesday",
+            link:"https://en.wikipedia.org/wiki/Mars_(mythology)"},
+            {name:"Wednesday",
+            link:"https://en.wikipedia.org/wiki/Mercury_(mythology)"}, 
+            {name:"Thursday",
+            link:"https://en.wikipedia.org/wiki/Jupiter_(mythology)"}, 
             {name:"Friday",
             link:"https://en.wikipedia.org/wiki/Venus_(mythology)"}, 
-            {name:"Saturday"}
+            {name:"Saturday",
+            link:"https://en.wikipedia.org/wiki/Saturn_(mythology)"}
         ];
         const dayObject = days[day1]
-        if (dayObject.name =="Saturday"){dayObject="h"}
         document.getElementById("day").innerHTML = makePlanetLink(dayObject)
         
     }
@@ -99,7 +145,9 @@ contact: cadencecadence@gmail.com
         return `<a href="${dayObject.link}">${dayObject.name}</a>` 
         //this is a template string! it uses! backticks ``
         //to access javascript inside of a template string ${JAVASCRIPT}
-        //yahoo!
     }
 
     </script>   
+
+</body>
+</html>
